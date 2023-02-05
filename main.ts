@@ -50,11 +50,11 @@ class AwsCloud extends TerraformStack {
   defineResources() {
 
     const publicSubnets = this.createSubnets(publicSubnetCidrBlocks, 'public');
-    // private subnets route outgoing traffic via Nat's
 
     new Cluster(this, 'demo-cluster', {
       vpcId,
       vpcCidrBlock,
+      //  https://developer.hashicorp.com/terraform/cdktf/concepts/tokens
       publicSubnets: idTokenList(publicSubnets), // Get the subnetID to pass to cluster
       eksClusterName,
       eksClusterVersion,

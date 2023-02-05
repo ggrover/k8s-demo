@@ -7,7 +7,6 @@ sso() {
 	profile=$1
 	aws sso login --profile $profile
 	export AWS_PROFILE=$profile
-	export NODE_ENV=$profile
 }
 
 eks() {
