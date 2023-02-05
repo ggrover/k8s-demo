@@ -44,7 +44,7 @@ export class Cluster extends Construct {
     // Creating the Amazon EKS cluster role
     // https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html#create-service-role
     const clusterServiceRole = new IamRole(this, 'eks-cluster-role', {
-      name: 'scbEksClusterService',
+      name: 'eksClusterService',
       assumeRolePolicy: JSON.stringify({
         "Version": "2012-10-17",
         "Statement": [
