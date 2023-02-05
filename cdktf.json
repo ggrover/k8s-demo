@@ -1,0 +1,14 @@
+{
+  "language": "typescript",
+  "app": "npm run --silent compile && node main.js",
+  "terraformProviders": [
+    "hashicorp/aws@~> 4.0",
+    "hashicorp/helm@ ~> 2.4.1"
+  ],
+  "terraformModules": [],
+  "context": {
+    "excludeStackIdFromLogicalIds": "true",
+    "allowSepCharsInLogicalIds": "true"
+  },
+  "projectId": "4b519ab0-1218-4898-ab2d-180620946383"
+}

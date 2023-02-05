@@ -1,0 +1,31 @@
+{
+  "aws": {
+    "region": "us-west-2",
+    "publicSubnetCidrBlocks": ["172.31.32.0/20", "172.31.48.0/20"],
+    "vpcId": "vpc-0b8fd922f8fe9b247",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "availabilityZones": ["us-west-2a", "us-west-2b"]
+  },
+  "cdktfBackend": {
+    "s3": {
+      "bucket": "cdktf-backend-k8s",
+      "key": "aws-cloud",
+      "region": "us-west-2",
+      "encrypt": true
+    }
+  },
+  "eks": {
+    "clusterName": "k8s-cluster",
+    "clusterVersion": "1.24",
+    "nodeGroups": {
+      "platform": {
+        "instanceTypes": ["t3.medium"],
+        "scalingConfig": {
+          "minSize": 1,
+          "maxSize": 2,
+          "desiredSize": 3
+        }
+      }
+    }
+  }
+}
