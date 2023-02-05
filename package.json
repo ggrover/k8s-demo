@@ -1,0 +1,36 @@
+{
+  "name": "cdk-terraform",
+  "version": "1.0.0",
+  "main": "main.js",
+  "types": "main.ts",
+  "license": "MPL-2.0",
+  "private": true,
+  "scripts": {
+    "backend:init": "./create-s3-backend-buckets.sh",
+    "get": "cdktf get",
+    "build": "tsc",
+    "synth": "cdktf synth",
+    "diff": "cdktf diff",
+    "compile": "tsc --pretty",
+    "watch": "tsc -w",
+    "test": "echo ok",
+    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
+    "upgrade:next": "npm i cdktf@next cdktf-cli@next",
+    "deploy": "cdktf deploy",
+    "destroy": "cdktf destroy"
+  },
+  "engines": {
+    "node": ">=10.12"
+  },
+  "dependencies": {
+    "@cdktf/provider-aws": "3.0.1",
+    "@types/config": "0.0.38",
+    "cdktf": "0.8.3",
+    "config": "3.3.6",
+    "constructs": "^10.0.63"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.35",
+    "typescript": "4.2.3"
+  }
+}
